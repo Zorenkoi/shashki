@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+* {
+  /* box-sizing: border-box; */
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cubes-container {
+  position: relative;
+  margin: 50px auto 0px;
+  width: 480px;
+  height: 480px;
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  background-color: pink;
+  border: 10px solid #361419;
+}
+.cube {
+}
+.cube.move {
+  box-shadow: 0px 0px 20px rgb(16, 82, 213);
+  opacity: 0.8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cube.black {
+  background-color: #7e303b;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cube.white {
+  background-color: #e7d5d7;
 }
-
-.App-link {
-  color: #61dafb;
+/* //////////////////////////////////////////////////// */
+.pawn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  box-shadow: 0px 0px 5px black;
+  scale: 0.8;
+  transition-duration: 0.3s;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pawn.active {
+  box-shadow: 0px 0px 20px rgb(16, 82, 213);
+  opacity: 0.8;
+}
+.pawn.possible {
+  box-shadow: 0px 0px 20px rgb(46, 213, 16);
+}
+.pawn.black {
+  background-color: #291013;
+}
+.pawn.white {
+  background-color: #d3b8ba;
+}
+.pawn.quen {
+  background-color: rgb(249, 189, 26);
 }
